@@ -29,7 +29,8 @@ const HomeScreen = ({ navigation }) => {
         navigation.navigate('Profile', { name: 'Michael' })
       }
     />
-  <Camera style={{ flex: 1 }} type={type}>
+    <Image source={require('./uml/Wizard.png')} />
+    <Camera style={{ flex: 1 }} type={type}>
         <View
           style={{
             flex: 1,
@@ -56,12 +57,13 @@ const HomeScreen = ({ navigation }) => {
     </>
   );
 };
+
 const ProfileScreen = ({ navigation, route }) => {
   return (
     <>
   <Text>This is {route.params.name}'s profile</Text>
       <View style={styles.container}>
-      <Image source={{ uri: 'https://i.imgur.com/TkIrScD.png' }} style={styles.logo} />
+      <Image source={require('./uml/Assassin.png')}/>
       <Text style={styles.instructions}>
         To share a photo from your phone with a friend, just press the button below!
       </Text>
@@ -69,12 +71,14 @@ const ProfileScreen = ({ navigation, route }) => {
       <TouchableOpacity
         onPress={() => alert('Hello, world!')}
         style={{ backgroundColor: 'blue' }}>
-        <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
+        <Text style={{ fontSize: 20, color: '#fff' }}>Share</Text>
       </TouchableOpacity>
     </View>
     </>
   );
 };
+
+
 export default function App() {
   return (
     <>
